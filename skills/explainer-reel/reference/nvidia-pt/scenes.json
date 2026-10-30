@@ -1,0 +1,102 @@
+[
+ {
+  "id": "S01",
+  "name": "Hook",
+  "start": 0,
+  "end": 3.3,
+  "title": [
+   "5 TRILHÕES E",
+   "ZERO FÁBRICAS"
+  ]
+ },
+ {
+  "id": "S02",
+  "name": "Desenha",
+  "start": 3.3,
+  "end": 7.65,
+  "title": [
+   "ELA DESENHA.",
+   "OUTRO FABRICA."
+  ]
+ },
+ {
+  "id": "S03",
+  "name": "Margem",
+  "start": 7.65,
+  "end": 12.75,
+  "title": [
+   "DE CADA US$ 100,",
+   "SOBRAM US$ 71"
+  ]
+ },
+ {
+  "id": "S04",
+  "name": "Origem",
+  "start": 12.75,
+  "end": 16.8,
+  "title": [
+   "1993: TUDO",
+   "COMEÇOU NO GAME"
+  ]
+ },
+ {
+  "id": "S05",
+  "name": "PuloDoGato",
+  "start": 16.8,
+  "end": 22.9,
+  "title": [
+   "O PULO",
+   "DO GATO"
+  ]
+ },
+ {
+  "id": "S06",
+  "name": "Cuda",
+  "start": 22.9,
+  "end": 30.65,
+  "title": [
+   "CUDA: GRÁTIS",
+   "E VICIANTE"
+  ]
+ },
+ {
+  "id": "S07",
+  "name": "Dinheiro",
+  "start": 30.65,
+  "end": 38.0,
+  "title": [
+   "AGORA,",
+   "O DINHEIRO"
+  ]
+ },
+ {
+  "id": "S08",
+  "name": "Receita",
+  "start": 38.0,
+  "end": 43.18,
+  "title": [
+   "ÚLTIMO ANO",
+   "FISCAL (FY26)"
+  ]
+ },
+ {
+  "id": "S09",
+  "name": "Risco",
+  "start": 43.18,
+  "end": 50.8,
+  "title": [
+   "MINHA LEITURA:",
+   "RISCO NO CLIENTE"
+  ]
+ },
+ {
+  "id": "S10",
+  "name": "Pa",
+  "start": 50.8,
+  "end": 56.24,
+  "title": [
+   "A PÁ DA",
+   "CORRIDA DO OURO"
+  ]
+ }
+]

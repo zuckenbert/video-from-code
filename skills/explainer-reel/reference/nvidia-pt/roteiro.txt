@@ -1,0 +1,10 @@
+A empresa mais valiosa do mundo não tem uma única fábrica.
+A NVIDIA só desenha o chip. Quem fabrica é a TSMC, em Taiwan.
+E de cada cem dólares que ela vende, setenta e um sobram depois de pagar a fabricação.
+Tudo começou numa lanchonete, em noventa e três, com placa de vídeo pra game.
+O pulo do gato: essa placa faz milhares de contas ao mesmo tempo, igualzinho ao que uma IA precisa.
+Em dois mil e seis, soltou o CUDA, de graça. Milhões de programadores aprenderam IA nele... e ficaram presos.
+Agora, o dinheiro: um rack com setenta e dois chips custa uns três milhões de dólares, e big tech compra aos milhares.
+No último ano: duzentos e dezesseis bilhões de receita. Mais da metade virou lucro.
+Minha leitura: o risco mora no cliente. Dois compradores pagaram mais de um terço da conta, e as big techs já desenham chip próprio.
+Na corrida do ouro da IA, a NVIDIA não cava. Ela vende a pá.

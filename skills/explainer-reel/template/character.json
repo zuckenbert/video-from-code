@@ -1,0 +1,8 @@
+{
+  "enabled": true,
+  "dir": "character",
+  "spriteWidth": 346,
+  "arm": { "file": "arm.png", "x": 196, "y": 248, "w": 150, "px": 18, "py": 52 },
+  "introSfx": "pop",
+  "introSfxVolume": 1.2
+}

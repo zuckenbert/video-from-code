@@ -1,0 +1,13 @@
+node_modules/
+out/
+renders/
+*.mp4
+*.mp3
+frames/
+stills/
+vo/
+events.json
+cut.json
+vo.json
+assets/*.ttf
+assets/*-OFL.txt

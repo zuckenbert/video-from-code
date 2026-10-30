@@ -1,0 +1,52 @@
+{
+  "_comment": "Pipeline defaults. Override any key with -c your_config.json (deep merge).",
+
+  "lang": "en",
+  "whisper_model": "~/.cache/whisper/ggml-large-v3-turbo.bin",
+
+  "out_w": 1920,
+  "out_h": 1080,
+  "fps": 30,
+
+  "_comment_theme": "Default = the repo palette: accent Beacon (the highlighted terms only), bar Cobalt (the card edge), background Ink, text Field, muted Slate.",
+  "theme": {
+    "accent": "#EF681E",
+    "bar": "#1D4AA5",
+    "background": "#12141A",
+    "text": "#F3EFE5",
+    "muted": "#8195B0"
+  },
+
+  "card": {
+    "name": "",
+    "role": "",
+    "logo": null,
+    "font_name": "assets/fonts/Manrope-SemiBold.ttf",
+    "font_role": "assets/fonts/IBMPlexMono-Medium.ttf",
+    "margin_x": 96,
+    "margin_y": 96,
+    "in_at": 0.6,
+    "in_dur": 0.55,
+    "out_at": 6.4,
+    "out_dur": 0.5
+  },
+
+  "caption": {
+    "font": "assets/fonts/Manrope-SemiBold.ttf",
+    "size": 58,
+    "line_h": 76,
+    "max_line": 34,
+    "max_cue": 62,
+    "max_dur": 3.4,
+    "min_dur": 0.85,
+    "fade": 0.12,
+    "margin_low": 86,
+    "margin_high": 268,
+    "stroke_w": 5
+  },
+
+  "_comment_text": "highlights = painted in theme.accent. locked = never split (neither between cues nor between lines). Highlights are locked automatically. fix = transcription corrections, lowercase word -> right form.",
+  "highlights": [],
+  "locked": [],
+  "fix": {}
+}

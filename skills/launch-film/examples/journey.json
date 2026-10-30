@@ -1,0 +1,49 @@
+{
+  "_comment": "Journey for examples/sample-app. Every `at` is a time in the FINAL FILM (the archival audio clock); the recorder plays it at t_rec = at - recAt (recAt from src/film.json). `cue` is only a label for the log: the word of the archival audio that the action must land on.",
+  "base": "http://127.0.0.1:8817/",
+  "viewport": { "width": 1440, "height": 900 },
+  "scale": 2,
+  "zoomMode": "documentElement",
+  "scroller": "#main",
+  "css": ".shell, main { height: 100% !important; }",
+  "locale": { "en": "en-US", "pt": "pt-BR" },
+  "cursorStart": { "x": 800, "y": 500 },
+  "vars": {
+    "en": {
+      "prompt": "Find fintechs hiring a Head of Sales this month, with the person who decides.",
+      "edit": "Hi Lena, saw the Head of Sales opening after the Series A. Want a pipeline ready on day one?"
+    },
+    "pt": {
+      "prompt": "Ache fintechs contratando head de vendas este mês, com quem decide.",
+      "edit": "Oi Lena, vi a vaga de head de vendas depois da Série A. Quer um pipeline pronto no primeiro dia?"
+    }
+  },
+  "warmup": [
+    { "s": "hash", "hash": "#/mission/demo", "after": 600 },
+    { "s": "waitFor", "target": { "css": "section.block" } },
+    { "s": "hash", "hash": "#/queue", "after": 600 },
+    { "s": "hash", "hash": "#/", "after": 600 },
+    { "s": "waitFor", "target": { "css": "#prompt" } }
+  ],
+  "steps": [
+    { "s": "click", "target": { "css": "#prompt" }, "at": 14.4, "zoom": 1.25, "hold": 0.1 },
+    { "s": "type", "text": "{{prompt}}", "at": 14.9, "delay": 45 },
+    { "s": "press", "key": "Enter", "at": 19.0, "zoom": 1.0 },
+    { "s": "nav", "hash": "#/mission/demo", "at": 21.4, "cue": "seeded result, >= 0.6 s after Enter" },
+    { "s": "waitFor", "target": { "css": "section.block.intro" } },
+    { "s": "zoom", "target": { "css": "section.block.intro" }, "at": 22.2, "scale": 1.18, "frac": 0.12, "cue": "twenty seconds and counting" },
+    { "s": "reveal", "target": { "css": "button[data-act=approve]" }, "at": 25.4, "frac": 0.75 },
+    { "s": "zoomReset", "at": 27.6 },
+    { "s": "click", "target": { "css": "button[data-act=edit]", "within": { "css": "section.block", "hasText": "Lena Ortiz" } }, "at": 29.3, "zoom": 1.3, "hold": 0.05, "settle": 120, "cue": "twelve (0.4 s early: the typed edit must finish before eleven)" },
+    { "s": "type", "focus": { "css": "textarea[name=text]" }, "clear": true, "text": "{{edit}}", "delay": 6 },
+    { "s": "click", "target": { "css": "button[data-act=save]" }, "at": 30.6, "zoom": 1.3, "hold": 0.05, "settle": 300, "cue": "eleven" },
+    { "s": "click", "target": { "css": "button[data-act=approve]" }, "at": 31.4, "zoom": 1.0, "hold": 0.05, "settle": 400, "cue": "ten" },
+    { "s": "zoom", "target": { "css": "section.block.panel" }, "at": 32.5, "scale": 1.25, "frac": 0.1, "cue": "nine" },
+    { "s": "hover", "target": { "css": "button[data-act=confirm]" }, "at": 36.5, "cue": "six: the cursor parks on the button through the count" },
+    { "s": "click", "target": { "css": "button[data-act=confirm]" }, "at": 41.7, "zoom": 1.25, "hold": 0.1, "settle": 500, "kind": "confirm", "cue": "zero" },
+    { "s": "reveal", "target": { "css": "section.block.result" }, "at": 43.0, "frac": 0.3, "zoom": 1.0 },
+    { "s": "nav", "hash": "#/queue", "at": 47.0, "cue": "hidden under the archival liftoff" },
+    { "s": "zoom", "target": { "css": "table" }, "at": 50.0, "scale": 1.15 },
+    { "s": "mark", "at": 64.0, "cue": "end card" }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "video": "source.mp4",
+  "language_code": "eng",
+  "num_speakers": 4,
+
+  "output": { "width": 1920, "height": 1080, "fps": 24, "crf": 19, "loudness": -16 },
+
+  "theme": {
+    "background": "#12141A",
+    "accent": "#EF681E",
+    "bar": "#1D4AA5",
+    "text": "#F3EFE5",
+    "muted": "#8195B0",
+    "font_bold": null,
+    "font_medium": null,
+    "logo": null
+  },
+
+  "caption": {
+    "size": 52,
+    "line_height": 68,
+    "stroke": 6,
+    "x": 88,
+    "max_width": 1180,
+    "bottom": 92,
+    "bottom_raised": 300,
+    "max_line_chars": 36,
+    "max_cue_chars": 74,
+    "max_dur": 3.4,
+    "min_dur": 0.85
+  },
+
+  "lower_third": {
+    "enabled": true,
+    "in": 0.6,
+    "out": 7.0,
+    "fade": 0.5,
+    "name_size": 44,
+    "role_size": 26,
+    "logo_height": 32
+  },
+
+  "pip": {
+    "enabled": true,
+    "source_crop": [476, 267, 1443, 406],
+    "w": 560, "h": 316, "x": 1324, "y": 728,
+    "border": 4
+  },
+
+  "share_detect": {
+    "split_x": 1440,
+    "threshold": 24,
+    "outside_threshold": 40,
+    "tile_slack": 26,
+    "probe_at": [0.15, 0.5, 0.85]
+  },
+
+  "lexicon": {
+    "highlight": ["API", "webhook"],
+    "locked": ["real time", "source of truth", "data model"],
+    "fix": { "cloud": "Claude", "kubernetis": "Kubernetes" },
+    "fillers": null,
+    "orphans": null
+  },
+
+  "speakers": {
+    "speaker_0": { "name": "First Last", "role": "Role of the person" },
+    "speaker_1": { "name": "Another Person", "role": "Another role" }
+  }
+}

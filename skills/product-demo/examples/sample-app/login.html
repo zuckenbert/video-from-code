@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Sign in · Taskboard</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="login">
+  <form id="f">
+    <div class="logo" style="color:var(--text);margin:0 0 18px"><i style="width:26px;height:26px;border-radius:7px;background:var(--brand);display:inline-block"></i> Taskboard</div>
+    <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="off"></div>
+    <div class="field"><label for="pw">Password</label><input id="pw" type="password"></div>
+    <button class="btn solid" style="width:100%">Sign in</button>
+  </form>
+</div>
+<script src="app.js"></script>
+<script>
+  $('#f').addEventListener('submit', (e) => { e.preventDefault(); store.user = $('#email').value || 'demo@example.com'; location.href = 'index.html' });
+</script></body></html>

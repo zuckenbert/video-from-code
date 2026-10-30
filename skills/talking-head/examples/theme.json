@@ -1,0 +1,33 @@
+{
+  "_comment": "Theme tokens. Copy to engine/remotion/src/data/theme.json (setup.sh does it once). Default = the repo palette: Field #F3EFE5 (light canvas), Ink #12141A (text, dark canvas), Cobalt #1D4AA5 (line: structure, routes, chart series), Slate #8195B0 (secondary, inactive, metadata), Beacon #EF681E (accent: the ONE thing that matters now, never a large fill). loss/danger red and ok green are semantic (money lost or a problem / success) and stay outside the palette on purpose.",
+  "ink": "#12141A",
+  "paper": "#F3EFE5",
+  "card": "#FBF9F4",
+  "grey": "#8195B0",
+  "greyMid": "#8195B0",
+  "greyDark": "#2E3442",
+  "line": "#1D4AA5",
+  "accent": "#EF681E",
+  "accentOnLight": "#C9520F",
+  "stage": "#F3EFE5",
+  "loss": "#FF6760",
+  "danger": "#E5312B",
+  "ok": "#50F769",
+  "font": {
+    "family": "Manrope",
+    "files": [
+      { "url": "fonts/Manrope-Medium.ttf", "weight": "500" },
+      { "url": "fonts/Manrope-SemiBold.ttf", "weight": "600" }
+    ]
+  },
+  "mono": {
+    "family": "IBM Plex Mono",
+    "files": [
+      { "url": "fonts/IBMPlexMono-Medium.ttf", "weight": "500" }
+    ]
+  },
+  "wordmark": null,
+  "wordmarkOnLight": null,
+  "url": "example.com",
+  "locale": "en-US"
+}

@@ -1,0 +1,53 @@
+{
+  "_comment": "All times are seconds of the FINAL film. Archival offsets (`from`) follow the cut files made by scripts/fetch_archival.sh; scripts/make_placeholders.sh builds stand-ins with the same offsets. The recorder cues the product on this same clock: t_rec = t_video - recAt.",
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "duration": 70,
+  "recAt": 14,
+  "endAt": 64,
+  "productFadeIn": 8,
+  "productFadeOut": 0.4,
+  "theme": { "bg": "#F3EFE5", "ink": "#12141A", "accent": "#EF681E", "side": "#E6E0D2", "font": "Manrope, Helvetica, Arial, sans-serif", "fontFile": "fonts/Manrope-Medium.ttf", "fontWeight": "500" },
+  "archive": [
+    { "name": "room", "src": "archive/room.mp4", "at": 0, "to": 8, "from": 1.5, "sat": 0.6, "fadeIn": 20, "fadeOut": 12 },
+    { "name": "liftoff_pad", "src": "archive/liftoff.mp4", "at": 44.3, "to": 47.8, "from": 3.5, "sat": 0.9 },
+    { "name": "liftoff_clear", "src": "archive/liftoff.mp4", "at": 47.8, "to": 54.9, "from": 23.0, "sat": 0.9, "fadeOut": 8 }
+  ],
+  "audio": [
+    { "name": "word", "src": "archive/radio.m4a", "at": 9.0, "from": 3.4, "dur": 1.7 },
+    { "name": "countdown", "src": "archive/count.m4a", "at": 22.0, "from": 7.3, "dur": 32.9, "fadeIn": 10, "fadeOut": 20 },
+    { "name": "confirm", "src": "archive/radio.m4a", "at": 56.0, "from": 16.6, "dur": 7.7 }
+  ],
+  "cards": [
+    { "key": "room", "at": 1.2, "to": 8, "outAt": 7.6, "color": "#F3EFE5", "size": 58, "y": 880 },
+    { "key": "word", "at": 9.0, "to": 14, "outAt": 13.6, "color": "#F3EFE5", "size": 170 },
+    { "key": "phrase", "at": 46.0, "to": 54.9, "outAt": 54.6, "color": "#F3EFE5", "size": 128, "y": 560 }
+  ],
+  "pills": [
+    { "key": "works", "at": 22.6, "to": 27.6 },
+    { "key": "review", "at": 29.5, "to": 33.0 },
+    { "key": "executes", "at": 57.0, "to": 62.5 }
+  ],
+  "end": { "wordmark": "relay.", "line": "end" },
+  "text": {
+    "en": {
+      "room": "1969. A whole room\nto say one word.",
+      "word": "Copy.",
+      "works": "Research. Signal. Who decides.",
+      "review": "You review.",
+      "phrase": "Copy that.",
+      "executes": "You approve. relay executes.",
+      "end": "You give the mission. Copy that."
+    },
+    "pt": {
+      "room": "1969. Uma sala inteira\npra dizer uma palavra.",
+      "word": "Copy.",
+      "works": "Pesquisa. Sinal. Quem decide.",
+      "review": "Você revisa.",
+      "phrase": "Copy that.",
+      "executes": "Você aprova. relay executa.",
+      "end": "Você dá a missão. Copy that."
+    }
+  }
+}

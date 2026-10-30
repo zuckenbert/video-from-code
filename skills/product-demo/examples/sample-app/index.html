@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>My tasks · Taskboard</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<script src="app.js"></script>
+<script>requireUser()</script>
+<div class="shell" id="shell"></div>
+<script>
+  let q = '';
+  function render() {
+    const all = store.tasks; const tasks = all.filter((t) => t.title.toLowerCase().includes(q.toLowerCase()));
+    const open = all.filter((t) => t.status === 'Open');
+    document.getElementById('shell').innerHTML = sidebar('tasks') + `<main>
+      <div class="top"><h1>My tasks</h1><div class="grow"></div>
+        <input class="search" placeholder="Search tasks" value="${esc(q)}" id="q">
+        <button class="btn solid" id="new">New task</button></div>
+      <div class="stats">
+        <div class="stat"><b>${open.length}</b><span>Open</span></div>
+        <div class="stat"><b>${open.filter((t) => t.priority === 'High').length}</b><span>High priority</span></div>
+        <div class="stat"><b>${all.filter((t) => t.urgent && t.status === 'Open').length}</b><span>Urgent</span></div>
+        <div class="stat"><b>${all.filter((t) => t.status === 'Done').length}</b><span>Done this week</span></div>
+      </div>
+      <table><thead><tr><th>Task</th><th>Priority</th><th>Due</th><th>Owner</th><th>Status</th></tr></thead><tbody>
+      ${tasks.map((t) => `<tr class="${t.fresh ? 'new' : ''}"><td><a href="task.html?id=${t.id}">${esc(t.title)}</a>${t.urgent ? '<span class="urgent">URGENT</span>' : ''}</td>
+        <td><span class="pill p-${t.priority}">${t.priority}</span></td><td>${esc(t.due)}</td><td>${esc(t.owner)}</td>
+        <td><span class="pill s-${t.status}">${t.status}</span></td></tr>`).join('') || '<tr><td colspan="5" class="empty">No tasks match.</td></tr>'}
+      </tbody></table></main>`;
+    const qi = document.getElementById('q');
+    qi.addEventListener('input', () => { q = qi.value; render(); const n = document.getElementById('q'); n.focus(); n.setSelectionRange(q.length, q.length) });
+    document.getElementById('new').addEventListener('click', () => newTaskDialog((t) => { render(); toast(`Task created: ${t.title}`) }));
+  }
+  render();
+</script></body></html>

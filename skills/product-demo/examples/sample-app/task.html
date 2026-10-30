@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Task · Taskboard</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<script src="app.js"></script>
+<script>requireUser()</script>
+<div class="shell" id="shell"></div>
+<script>
+  const id = Number(new URLSearchParams(location.search).get('id'));
+  const COLORS = { 'Alex Rivera': '#1D4AA5', 'Sam Chen': '#4F6A93', 'Priya Nair': '#8195B0', 'Jordan Lee': '#12141A' };
+  const av = (n) => `<div class="av" style="background:${COLORS[n] ?? '#8195B0'}">${n.split(' ').map((p) => p[0]).join('')}</div>`;
+  function render() {
+    const t = store.tasks.find((x) => x.id === id);
+    if (!t) { document.getElementById('shell').innerHTML = sidebar('tasks') + '<main><p class="empty">Task not found.</p></main>'; return }
+    const feed = [
+      ['Alex Rivera', `created this task`, '2 min ago'],
+      ['Alex Rivera', `set priority to <b>${t.priority}</b>`, '2 min ago'],
+      ...(t.urgent ? [['Alex Rivera', 'marked it as <b>urgent</b>', '2 min ago']] : []),
+      ['Alex Rivera', `set the due date to <b>${esc(t.due)}</b>`, '2 min ago'],
+      ['Sam Chen', 'commented: <em>"I can pair on the copy tomorrow morning."</em>', '1 min ago'],
+      ['Priya Nair', 'added the checklist item <b>Get sign-off</b>', '1 min ago'],
+      ['Jordan Lee', 'commented: <em>"Linking the design file in the description."</em>', 'just now'],
+      ...(t.status === 'Done' ? [['Alex Rivera', 'marked this task as <b>done</b>', 'just now']] : []),
+    ];
+    const todos = ['Outline the steps', 'Draft the first version', 'Ask for review', 'Apply feedback', 'Get sign-off'];
+    document.getElementById('shell').innerHTML = sidebar('tasks') + `<main>
+      <div class="crumbs"><a href="index.html">My tasks</a> / #${t.id}</div>
+      <div class="top"><h1>${esc(t.title)}</h1><span class="pill s-${t.status}">${t.status}</span><div class="grow"></div>
+        ${t.status === 'Open' ? '<button class="btn ok" id="done">Mark as done</button>' : ''}</div>
+      <div class="cols">
+        <div class="card"><h3>Description</h3><p style="margin:0 0 18px;color:var(--muted)">Everything needed to close this out. Owner keeps the checklist current and posts updates in the activity feed.</p>
+          <h3>Checklist</h3>${todos.map((x, i) => `<label class="todo"><input type="checkbox" ${t.status === 'Done' || i < 1 ? 'checked' : ''}> ${x}</label>`).join('')}</div>
+        <div class="card props"><h3>Properties</h3>
+          <div><span>Priority</span><b><span class="pill p-${t.priority}">${t.priority}</span></b></div>
+          <div><span>Due</span><b>${esc(t.due)}</b></div>
+          <div><span>Urgent</span><b>${t.urgent ? 'Yes' : 'No'}</b></div>
+          <div><span>Owner</span><b>${esc(t.owner)}</b></div>
+          <div><span>Watchers</span><b>3</b></div></div>
+      </div>
+      <div class="card feed"><h3>Activity</h3>
+        ${feed.map(([who, what, when]) => `<div class="ev">${av(who)}<div class="what"><b>${who}</b> ${what}</div><time>${when}</time></div>`).join('')}
+      </div>
+      <div style="height:320px"></div></main>`;
+    const b = document.getElementById('done');
+    if (b) b.addEventListener('click', () => {
+      const d = openDialog(`<h2>Mark this task as done?</h2><p class="hint">Watchers get a notification and the task leaves your open list.</p>
+        <div class="actions"><button type="button" class="btn" data-x="cancel">Cancel</button><button type="button" class="btn ok" data-x="ok">Mark as done</button></div>`, { role: 'alertdialog', label: 'Mark as done' });
+      d.el.querySelector('[data-x=cancel]').addEventListener('click', d.close);
+      d.el.querySelector('[data-x=ok]').addEventListener('click', () => {
+        store.tasks = store.tasks.map((x) => (x.id === id ? { ...x, status: 'Done' } : x)); d.close(); window.scrollTo({ top: 0 }); render(); toast('Task marked as done');
+      });
+    });
+  }
+  render();
+</script></body></html>

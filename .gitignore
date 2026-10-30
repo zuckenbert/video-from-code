@@ -1,0 +1,8 @@
+.scratch/
+node_modules/
+out/
+.venv/
+__pycache__/
+.DS_Store
+*.mp4
+HANDOFF*.md

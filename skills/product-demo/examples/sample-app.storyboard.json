@@ -1,0 +1,83 @@
+{
+ "title": "A task in 30 seconds",
+ "base": "http://127.0.0.1:8417",
+ "viewport": { "width": 1600, "height": 900 },
+ "locale": "en-US",
+ "lang": "en",
+ "speed": 1.3,
+ "cardMin": 3.2,
+ "pad": 0.5,
+ "warmup": ["/login.html"],
+ "brand": { "url": "tasks.example.com" },
+ "scenes": [
+  {
+   "id": "login",
+   "capture": false,
+   "steps": [
+    { "s": "goto", "url": "/login.html" },
+    { "s": "fill", "target": { "label": "Email" }, "text": "alex@example.com" },
+    { "s": "fill", "target": { "css": "input[type=password]" }, "text": "demo" },
+    { "s": "press", "key": "Enter", "settle": 1200 }
+   ]
+  },
+  {
+   "id": "hook",
+   "kind": "card",
+   "title": "30 seconds.",
+   "line": "From idea to a tracked, prioritized task.",
+   "sub": "tasks.example.com",
+   "vo": "How long does it take to turn an idea into a task your team can track? About thirty seconds. Timer on."
+  },
+  {
+   "id": "create",
+   "chapter": "Create",
+   "timer": true,
+   "vo": "New task. A title, a priority, flag it as urgent, and pick a due date.",
+   "steps": [
+    { "s": "goto", "url": "/", "hold": 0.9 },
+    { "s": "click", "target": { "role": "button", "name": "New task" }, "zoom": 1.7, "hold": 0.6 },
+    { "s": "click", "target": { "role": "textbox", "name": "Title" }, "zoom": 1.7 },
+    { "s": "type", "text": "Ship the onboarding checklist", "hold": 0.3 },
+    { "s": "select", "target": { "role": "combobox", "name": "Priority" }, "option": "High", "zoom": 1.7 },
+    { "s": "check", "target": { "label": "Urgent" }, "zoom": 1.8 },
+    { "s": "date", "target": { "role": "button", "name": "Due date" }, "month_next": 1, "day": "20", "zoom": 1.5 },
+    { "s": "sheet_submit", "name": "Create task" },
+    { "s": "snap", "hold": 2.0 }
+   ]
+  },
+  {
+   "id": "review",
+   "chapter": "Find and review",
+   "vo": "Search finds it instantly. Every change is in the activity feed, so the whole team sees the same story.",
+   "steps": [
+    { "s": "click", "target": { "placeholder": "Search tasks" }, "zoom": 1.5 },
+    { "s": "type", "text": "onboard", "fast": true, "hold": 0.4 },
+    { "s": "click", "target": { "role": "link", "name": "Ship the onboarding" }, "zoom": 1.5, "hold": 0.6 },
+    { "s": "snap", "hold": 1.0 },
+    { "s": "scroll", "target": { "text": "Activity", "exact": true }, "zoom": 1.3, "hold": 1.0 },
+    { "s": "zoom", "target": { "text": "marked it as" }, "scale": 1.7, "hold": 1.4 },
+    { "s": "zoom", "reset": true }
+   ]
+  },
+  {
+   "id": "finish",
+   "chapter": "Close it",
+   "timer": true,
+   "vo": "Done? One click, one confirmation.",
+   "steps": [
+    { "s": "scroll", "top": true, "hold": 0.4 },
+    { "s": "click", "target": { "role": "button", "name": "Mark as done" }, "zoom": 1.6, "hold": 0.5 },
+    { "s": "confirm", "hold": 0.8 },
+    { "s": "snap", "hold": 1.6 }
+   ]
+  },
+  {
+   "id": "cta",
+   "kind": "card",
+   "title": "Your app next.",
+   "line": "One storyboard, real UI frames, one render.",
+   "sub": "tasks.example.com",
+   "vo": "Your app is next. One storyboard, real screens, one render."
+  }
+ ]
+}

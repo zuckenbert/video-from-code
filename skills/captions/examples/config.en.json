@@ -1,0 +1,25 @@
+{
+  "lang": "en",
+  "card": {
+    "name": "Alex Example",
+    "role": "Urban Mobility Lead",
+    "logo": null
+  },
+  "theme": {
+    "accent": "#4CC9F0"
+  },
+  "highlights": [
+    "bike lane network"
+  ],
+  "locked": [
+    "August 10th",
+    "6 in the evening",
+    "public hearing"
+  ],
+  "fix": {
+    "city": "city",
+    "bike": "bike",
+    "lane": "lane",
+    "network": "network"
+  }
+}

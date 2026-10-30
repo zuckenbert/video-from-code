@@ -1,0 +1,14 @@
+# never commit footage, transcripts, face tracks or renders
+engine/remotion/node_modules/
+engine/remotion/out/
+engine/remotion/src/data/*.json
+engine/remotion/public/*
+!engine/remotion/public/fonts/
+!engine/remotion/public/sfx/
+engine/.venv/
+__pycache__/
+*.raw.mp4
+*.mp4
+*.mov
+*.wav
+engine/work/

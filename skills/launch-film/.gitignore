@@ -1,0 +1,6 @@
+node_modules/
+out/
+public/*
+!public/.gitkeep
+*.webm
+rec_tmp/

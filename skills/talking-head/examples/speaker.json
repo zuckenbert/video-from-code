@@ -1,0 +1,58 @@
+{
+  "_comment": "One speaker. Copy to engine/remotion/src/data/speaker.json and edit. Every BeatRef is a word the person really says: \"word\" or [\"word\", afterSeconds] when it repeats (case-insensitive, output time after the EDL). The example below assumes this sentence on camera: 'How many apps does your team use to ship one project? Usually five. Chat, docs, tickets, design, and calendar. Five logins, five bills, and when something breaks, nobody owns it. We paid twelve hundred a month. What if it was one place? Everything connected, one workspace. Click below.'",
+  "name": "Ada Example",
+  "role": "Head of Product, Example Co.",
+  "src": "speaker_raw.mp4",
+  "segs": [[0.0, 30.0]],
+  "fillers": ["um,", "uh,", "um", "uh"],
+  "keywords": ["five", "one", "nobody", "workspace"],
+  "lowerThird": { "inS": 0.6, "outS": 7.0 },
+  "sfx": false,
+  "story": {
+    "_comment": "Style 5 (Stage-Story). join = punch-in from a time on to hide a cut between two takes, e.g. { \"at\": 21.3, \"zoom\": 1.44 }. number is optional: { \"at\": \"80%\", \"value\": 80, \"suffix\": \"%\" } adds a final kinetic-number beat.",
+    "zoom": 1.32,
+    "faceY": 0.42,
+    "join": null,
+    "beats": {
+      "ask": "How",
+      "many": "five.",
+      "sign": "logins,",
+      "problem": "breaks,",
+      "nobody": "nobody",
+      "one": ["one", 12],
+      "link": "connected,",
+      "stamp": "workspace.",
+      "cta": "Click"
+    },
+    "items": ["Chat,", "docs,", "tickets,", "design,", "calendar."],
+    "number": null
+  },
+  "fx": {
+    "_comment": "Style 2 (Speaker-Fx) and the body of style 3 (Mixed). The camera splits once at `split`. Panels: steps, statement, rows (only numbers really said), chat (only sentences really said).",
+    "split": "five.",
+    "chapters": {
+      "kicker": "example co. / projects",
+      "title": "One place to ship",
+      "items": [
+        { "label": "Five apps", "at": "five." },
+        { "label": "Nobody owns it", "at": "nobody" },
+        { "label": "One workspace", "at": ["one", 12] }
+      ]
+    },
+    "panels": [
+      { "type": "steps", "in": "five.", "out": "calendar.", "pad": 1.2, "title": "Apps per project",
+        "items": [["Chat", "Chat,"], ["Docs", "docs,"], ["Tickets", "tickets,"], ["Design", "design,"], ["Calendar", "calendar."]] },
+      { "type": "chat", "in": "breaks,", "out": "nobody", "pad": 1.6, "label": "Team chat",
+        "question": "Who owns this?", "answer": "Nobody owns it.", "q": "breaks,", "a": "nobody" },
+      { "type": "rows", "in": "paid", "out": "month.", "pad": 1.6, "title": "Per month", "at": "paid", "prefix": "$ ", "decimals": 0,
+        "rows": [["Five apps", 1200, "loss"]] },
+      { "type": "statement", "in": ["one", 12], "light": true, "size": 96, "underline": "workspace.",
+        "lines": [["One place,", ["one", 12]], ["connected.", "connected,"]] }
+    ]
+  },
+  "mixed": {
+    "coldOpen": { "seconds": 5, "words": ["How", "many", "apps", "is", "too", "many?"], "accent": "loss" },
+    "close": { "seconds": 4, "line": "One place for the whole project." }
+  },
+  "endCard": { "line": "One place for the whole project." }
+}
